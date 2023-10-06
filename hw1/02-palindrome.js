@@ -1,6 +1,8 @@
 function isPalindrome(value) {
   const stringInput = value.toString();
-  const reversedInput = stringInput.split("").reverse().join("");
+  const reversedInput = stringInput.split("")
+                        .reverse()
+                        .join("");
   return stringInput === reversedInput;
 }
 
@@ -13,7 +15,6 @@ const elem = document.querySelector("input");
 
 const handleInput = () => {
   const input = parseInt(elem.value);
-
   if (!Number.isNaN(input)) {
     if (input >= 0) {
       const isInputPalindrome = isPalindrome(input);
