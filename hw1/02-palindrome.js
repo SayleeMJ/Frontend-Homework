@@ -18,15 +18,15 @@ const handleInput = () => {
     if (input >= 0) {
       const isInputPalindrome = isPalindrome(input);
       if (isInputPalindrome) {
-        displayPalindromeResult("text-success", "Yes. This is a palindrome!");
+        displayPalindromeResult('text-success', 'Yes. This is a palindrome!');
       } else {
-        displayPalindromeResult("text-danger", "No. Try again.");
+        displayPalindromeResult('text-danger', 'No. Try again.');
       }
     } else {
-      displayPalindromeResult("text-danger", "Enter a positive number!");
+      displayPalindromeResult('text-danger', 'Enter a positive number!');
     }
   } else {
-    displayPalindromeResult("text-black", "Please enter a number first!");
+    displayPalindromeResult('text-black', 'Please enter a number first!');
   }
 };
 
