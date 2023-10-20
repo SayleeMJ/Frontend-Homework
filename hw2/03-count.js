@@ -3,7 +3,7 @@ const text = document.getElementById("text");
 
 function handleKeyDown() {
   const searchWord = wordToBeHighlighted.value.trim().toLowerCase();
-  const textContent = text.textContent.toLowerCase();
+  const textContent = text.textContent;
   const wordsArray = textContent.split(' ');
 
   if (searchWord !== "") {
