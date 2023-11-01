@@ -1,0 +1,19 @@
+.home-container {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url("../images/home.jpg");
+}
+
+.text-overlay {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 50px;
+  font-family: cursive;
+  font-style: italic;
+  font-size: 50px;
+}
