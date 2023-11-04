@@ -1,32 +1,32 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import "../CSS/search.css";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import '../CSS/search.css';
 
-const url = "https://thronesapi.com/api/v2/Characters";
+const url = 'https://thronesapi.com/api/v2/Characters';
 function Search() {
   const [charactersList, setCharacterList] = useState([]);
-  const [searchCharacter, setSearchCharacter] = useState("");
+  const [searchCharacter, setSearchCharacter] = useState('');
   useEffect(() => {
     axios.get(url).then((response) => setCharacterList(response.data));
   }, []);
   return (
-    <div className="container">
+    <div className='container'>
       <h2>
-        <label className="search-box" for="charSearch">
+        <label className='search-box' for='charSearch'>
           Search character:
         </label>
         <input
-          id="charSearch"
-          type="text"
-          placeholder="Enter Character Name"
+          id='charSearch'
+          type='text'
+          placeholder='Enter Character Name'
           onChange={(e) => setSearchCharacter(e.target.value)}
         ></input>
       </h2>
 
-      <section id="characters-container" class="mx-auto">
+      <section id='characters-container' class='mx-auto'>
         {charactersList
           .filter((item) => {
-            if (searchCharacter === "") {
+            if (searchCharacter === '') {
               return item;
             } else if (
               item.fullName
@@ -39,15 +39,15 @@ function Search() {
           .map((item) => {
             let altText = `${item.fullName} of ${item.family}`;
             return (
-              <div className="card">
-                <div className="card-body">
+              <div className='card'>
+                <div className='card-body'>
                   <img
-                    className="card-img"
+                    className='card-img'
                     src={item.imageUrl}
                     alt={altText}
                   ></img>
-                  <span className="card-title">{item.fullName}</span>
-                  <p className="card-text">{item.title}</p>
+                  <span className='card-title'>{item.fullName}</span>
+                  <p className='card-text'>{item.title}</p>
                 </div>
               </div>
             );

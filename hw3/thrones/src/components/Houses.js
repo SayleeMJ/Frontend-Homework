@@ -1,48 +1,48 @@
-import { useState, useEffect } from "react";
-import { Doughnut } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import "../CSS/houses.css";
+import { useState, useEffect } from 'react';
+import { Doughnut } from 'react-chartjs-2';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import '../CSS/houses.css';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const backgroundColors = [
-  "rgba(54, 162, 235, 0.8)",
-  "rgba(255, 206, 86, 0.8)",
-  "rgba(255, 99, 132, 0.8)",
-  "rgba(75, 192, 192, 0.8)",
-  "rgba(153, 102, 255, 0.8)",
-  "rgba(255, 159, 64, 0.8)",
-  "rgba(199, 199, 199, 0.8)",
-  "rgba(83, 102, 255, 0.8)",
-  "rgba(40, 159, 64, 0.8)",
-  "rgba(210, 199, 199, 0.8)",
-  "rgba(78, 52, 199, 0.8)",
+  'rgba(54, 162, 235, 0.8)',
+  'rgba(255, 206, 86, 0.8)',
+  'rgba(255, 99, 132, 0.8)',
+  'rgba(75, 192, 192, 0.8)',
+  'rgba(153, 102, 255, 0.8)',
+  'rgba(255, 159, 64, 0.8)',
+  'rgba(199, 199, 199, 0.8)',
+  'rgba(83, 102, 255, 0.8)',
+  'rgba(40, 159, 64, 0.8)',
+  'rgba(210, 199, 199, 0.8)',
+  'rgba(78, 52, 199, 0.8)',
 ];
 
 const borderColors = [
-  "rgba(54, 162, 235, 1)",
-  "rgba(255, 206, 86, 1)",
-  "rgba(255, 99, 132, 1)",
-  "rgba(75, 192, 192, 1)",
-  "rgba(153, 102, 255, 1)",
-  "rgba(255, 159, 64, 1)",
-  "rgba(159, 159, 159, 1)",
-  "rgba(83, 102, 255, 1)",
-  "rgba(40, 159, 64, 1)",
-  "rgba(210, 199, 199, 1)",
-  "rgba(78, 52, 199, 1)",
+  'rgba(54, 162, 235, 1)',
+  'rgba(255, 206, 86, 1)',
+  'rgba(255, 99, 132, 1)',
+  'rgba(75, 192, 192, 1)',
+  'rgba(153, 102, 255, 1)',
+  'rgba(255, 159, 64, 1)',
+  'rgba(159, 159, 159, 1)',
+  'rgba(83, 102, 255, 1)',
+  'rgba(40, 159, 64, 1)',
+  'rgba(210, 199, 199, 1)',
+  'rgba(78, 52, 199, 1)',
 ];
 
-const url = "https://thronesapi.com/api/v2/Characters";
+const url = 'https://thronesapi.com/api/v2/Characters';
 
 const cleanFamilyName = (family) => {
-  family = family.replace(/House/, "").trim();
+  family = family.replace(/House/, '').trim();
   const cleanFamilyNames = {
-    Lanister: "Lannister",
-    None: "Unknown",
-    Unkown: "Unknown",
-    Targaryan: "Targaryen",
-    Targaryn: "Targaryen",
-    "": "Unknown",
+    Lanister: 'Lannister',
+    None: 'Others',
+    Unkown: 'Others',
+    Targaryan: 'Targaryen',
+    Targaryn: 'Targaryen',
+    '': 'Others',
   };
   return cleanFamilyNames[family] || family;
 };
@@ -70,7 +70,7 @@ function House () {
       
           Object.keys(houseCounts).forEach((house) => {
             if (houseCounts[house] === 1) {
-              houseCounts["Others"] = (houseCounts["Others"] || 0) + 1;
+              houseCounts['Others'] = (houseCounts['Others'] || 0) + 1;
               delete houseCounts[house];
             }
           });
@@ -91,7 +91,7 @@ function House () {
         labels: houseLabels,
         datasets: [
           {
-            label: "Members in house",
+            label: 'Members in house',
             data: houseValues,
             backgroundColor: backgroundColors,
             borderColor: borderColors,
@@ -102,7 +102,7 @@ function House () {
       const options = {
         plugins: {
           legend: {
-            position: "bottom",
+            position: 'bottom',
             labels: { font: { size: 15 } },
             title: {
               display: true,
@@ -110,8 +110,8 @@ function House () {
               font: {
                 size: 0,
               },
-              text: "House of Dragons",
-              position: "top",
+              text: 'House of Dragons',
+              position: 'top',
             },
           },
         },
@@ -119,10 +119,10 @@ function House () {
       };
 
       return (
-        <div className="chart-container">
+        <div className='chart-container'>
           <Doughnut
             data={renderChart}
-            aria-label="House Count Information"
+            aria-label='House Count Information'
             options={options}
           />
         </div>
