@@ -11,7 +11,7 @@ fetch(url)
       const cards = document.createElement('div');
       cards.classList.add(
         'character-card',
-        'col-sm-6',
+        'col-6',
         'col-md-3',
         'col-lg-3',
         'mb-4'

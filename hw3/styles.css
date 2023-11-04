@@ -18,10 +18,11 @@ h1 {
 .character-card {
   background-color: var(--cyan);
   padding: 10px;
-  margin: auto;
-  height: 387px;
-  width: 23%;
+  margin: 1%;
+  width: 48%;
+  min-height: 387px;
 }
+
 
 .character-card img {
   width: 100%;
@@ -48,4 +49,10 @@ h1 {
 .character-card.hovered {
   background-color: var(--blue);
   color: var(--white);
+}
+
+@media (min-width: 768px) {
+  .character-card {
+    width: 23%; /* Switch to four cards per row on larger viewports */
+  }
 }
