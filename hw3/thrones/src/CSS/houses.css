@@ -8,17 +8,9 @@ body {
   background-color: var(--cyan);
 }
 
-h1 {
-  text-align: center;
-}
-
-.donut-chart {
-  padding: 2rem;
-}
-.chartContainer {
+.chart-container {
   background-color: var(--white);
-  margin-top: 4rem;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  padding: 3rem;
+  padding: 1rem;
+  max-width: 850px;
+  margin: 4rem auto 4rem auto;
 }
